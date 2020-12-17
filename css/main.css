@@ -177,7 +177,7 @@ ul {
   background-color: #e4d5f6;
 }
 .functionning__items:hover .fa-mobile-alt, .functionning__items:hover .fa-list-ul, .functionning__items:hover .fa-store {
-  transition: 301ms;
+  transition: 300ms;
   color: #9356DC;
 }
 .functionning__number {
