@@ -1,0 +1,13 @@
+.header{
+    @include align;
+    
+}
+
+.header__logo{
+    @include header;
+
+    &--shadow{
+        position: relative;
+        @include box-shadow;
+    }
+}
