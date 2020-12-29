@@ -418,7 +418,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .card__description {
   height: 30%;
   padding: 10px;
-  color: black;
+  color: white;
 }
 .card__region {
   font-weight: 300;
