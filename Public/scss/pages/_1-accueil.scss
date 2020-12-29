@@ -113,15 +113,18 @@
     }
 
     &__number{
+        display: flex;
         position: absolute;
-        left: 10px;
-        background-color: $primary-color;
+        flex-direction: row-reverse;
         border-radius: 30px;
+        left: 10px;
+        width: 20px;
+        margin: auto;
+        padding: 2px;
+        background-color: $primary-color;
+        margin: auto;
+        justify-content: center;
         color: white;
-        padding-left: 6px;
-        padding-right: 6px;
-        padding-top: 1px;
-        padding-bottom: 1px;
     }
 }
 

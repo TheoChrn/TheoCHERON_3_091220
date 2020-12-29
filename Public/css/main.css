@@ -468,15 +468,18 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   color: #9356DC;
 }
 .functionning__number {
+  display: flex;
   position: absolute;
-  left: 10px;
-  background-color: #9356DC;
+  flex-direction: row-reverse;
   border-radius: 30px;
+  left: 10px;
+  width: 20px;
+  margin: auto;
+  padding: 2px;
+  background-color: #9356DC;
+  margin: auto;
+  justify-content: center;
   color: white;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 1px;
-  padding-bottom: 1px;
 }
 
 .fa-mobile-alt, .fa-list-ul, .fa-store {
@@ -485,7 +488,52 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   float: left;
 }
 
-@media all and (min-width: 1023px) {
+@media all and (min-width: 1024px) {
+  .layout {
+    display: flex;
+  }
+  .layout--2 {
+    flex-direction: row-reverse;
+    width: 30%;
+  }
+
+  .discover {
+    display: flex;
+    height: 20%;
+    padding: 50px;
+    padding-left: 25px;
+  }
+
+  .search {
+    align-items: flex-start;
+    background-color: white;
+    padding: 0;
+  }
+
+  .fonctionnement {
+    height: 50%;
+    padding: 50px;
+    padding-left: 25px;
+    padding-top: 0;
+  }
+
+  .functionning {
+    padding: 0;
+  }
+  .functionning__number {
+    left: 35px;
+  }
+
+  .restaurants {
+    width: 70%;
+    background-color: white;
+    padding: 50px;
+  }
+  .restaurants__title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   .cards {
     display: flex;
     justify-content: space-around;
