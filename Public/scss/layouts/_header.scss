@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+    z-index: 1;
+
+    &--shadow{
+        position: relative;
+        @include box-shadow;
+    }
+    
+    &__arrow{
+        position: absolute;
+        top: 34%;
+        left: 15px;
+        cursor: pointer;
+
+        & a:visited{
+            color: black;
+        }
+    }
+}
+
+.fa-arrow-left{
+    font-size: 1.5em;
+}
+

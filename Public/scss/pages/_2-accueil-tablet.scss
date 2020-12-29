@@ -1,0 +1,20 @@
+@media all and (min-width: 1024px){
+
+    .asideCard{
+       
+    }
+
+    .cards{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 45%;
+
+        &__img{
+            height: 65%;
+        }
+    }
+}

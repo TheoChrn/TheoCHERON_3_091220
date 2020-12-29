@@ -1,0 +1,50 @@
+/**ANIMATION ACCUEIL**/
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader{
+    0%{
+        opacity: 1;
+        height: 500px
+    }   
+
+    80%{
+        height: 500px;
+    }
+
+    100%{
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes pop{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.spinner{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    font-size: 6em;
+    animation: loader 2500ms linear forwards;
+
+    &__img{
+        margin: auto;
+        animation: loading 600ms linear infinite forwards;
+    }
+}

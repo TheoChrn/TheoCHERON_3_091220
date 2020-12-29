@@ -1,8 +1,26 @@
-.header__localisation{
+.localisation{
+    display: flex;
+    justify-content: center;
     @include header;
     @include darker;
-    
+
+    &__map{
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &__text{
+        outline: none;
+        border: none;
+        @include darker;
+        font-size: 1.5em;
+        font-weight: bolder;
+        width: 200px;
+    }
 }
+
 
 .restaurants{
     background-color: $background-color-alt;
@@ -13,17 +31,22 @@
     }
 }
 
+.cards{
+    width: 100%;
+}
+
 .card{
     display: flex;
     flex-direction: column;
     margin: $global-margin;
-    max-width: $main-width;
-    height: 250px;
+    max-width: 100%;
+    height: 225px;
     border-radius: 30px;
     @include box-shadow;
         &__img{
             max-height: 70%;
             max-width: 100%;
+
             & img{
                 height: 100%;
                 width: 100%;
@@ -35,15 +58,11 @@
         &__description{
             height: 30%;
             padding: 10px;
-            color: black;
+            color: black;            
+        }
 
-            &__name{
-
-            }
-            
-            &__region{
-                font-weight: 300;
-            }
+        &__region{
+            font-weight: 300;
         }
 
         &__description h3, &__description h4{

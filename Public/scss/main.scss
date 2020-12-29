@@ -10,13 +10,17 @@
 /**Components**/
 @import "components/logo";
 @import "components/button";
-
+@import "components/heart-icone";
+@import "components/animation";
 /**Layouts**/
 @import "layouts/footer";
 @import "layouts/header";
+@import "layouts/background";
+@import "layouts/menu";
 
 /**Pages**/
-@import "pages/accueil";
+@import "pages/1-accueil";
+@import "pages/2-accueil-tablet";
 
 /**Themes**/
 
