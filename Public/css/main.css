@@ -39,7 +39,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   width: 100%;
 }
 .logo--small {
-  width: 40%;
+  width: 300px;
 }
 .logo--header {
   width: 225px;
@@ -153,6 +153,9 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 }
 .nav__link--bold {
   font-weight: 500;
+}
+.nav__list {
+  padding-left: 0;
 }
 
 .fa-utensils, .fa-hands-helping {
@@ -528,20 +531,23 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
     width: 70%;
     background-color: white;
     padding: 50px;
+    padding-left: 25px;
+    border-left: 5px solid #f6f6f6;
   }
   .restaurants__title {
-    margin-top: 0;
-    margin-bottom: 0;
+    justify-content: center;
+    margin: auto;
+    display: flex;
   }
 
   .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
   }
 
   .card {
-    width: 45%;
+    width: 40%;
   }
   .card__img {
     height: 65%;

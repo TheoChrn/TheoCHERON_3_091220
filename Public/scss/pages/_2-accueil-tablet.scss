@@ -42,21 +42,24 @@
         width: 70%;
         background-color: white;
         padding: 50px;
+        padding-left: 25px;
+        border-left: 5px solid $background-color-alt;
 
         &__title{
-            margin-top: 0;
-            margin-bottom: 0;
+            justify-content: center;
+            margin: auto;
+            display: flex;
         }
     }
 
     .cards{
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
     .card{
-        width: 45%;
+        width: 40%;
 
         &__img{
             height: 65%;

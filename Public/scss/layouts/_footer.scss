@@ -17,7 +17,11 @@
         &--bold{
             font-weight: 500;
         }
-    }   
+    }  
+    
+    &__list{
+        padding-left: 0;
+    }
 }
 
 .fa-utensils, .fa-hands-helping{
