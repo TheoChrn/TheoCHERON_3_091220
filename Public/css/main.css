@@ -485,7 +485,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   float: left;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1023px) {
   .cards {
     display: flex;
     justify-content: space-around;
