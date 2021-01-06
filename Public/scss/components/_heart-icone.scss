@@ -6,27 +6,8 @@
     right: 10px;
 
     .heart__icone{
-        position: relative;
         margin: auto;
         margin-left: 0;
         margin-right: 0;
-
-        &--fill{
-            visibility: hidden;
-            left: 16px;
-            color: black;
-
-            &:hover{
-                visibility: visible;
-                color: purple;
-            }
-        }
-
-        &--border{
-            visibility: visible;
-            &:hover{
-                visibility: hidden;
-            }
-        }
     }
 }

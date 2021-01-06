@@ -16,12 +16,12 @@
 @import "layouts/footer";
 @import "layouts/header";
 @import "layouts/background";
-@import "layouts/menu";
+@import "layouts/1-menu";
+@import "layouts/2-menu-laptop";
+@import "layouts/responsive-laptop";
 
 /**Pages**/
 @import "pages/1-accueil";
-@import "pages/2-accueil-tablet";
-
 /**Themes**/
 
 

@@ -83,9 +83,10 @@
         @include box-shadow;
         cursor: pointer;
         overflow: hidden;
+        text-overflow: ellipsis;
         
 
-        &--1, &--2, &--3, &--4, &--5, &--6, &--7, &--8, &--9{
+        &--1, &--2, &--3, &--4, &--5, &--6, &--7, &--8, &--9, &--10{
             animation: fadeIn ease-out 600ms 200ms both;
         }
 
@@ -119,7 +120,11 @@
 
         &--9{
             animation-delay: 1800ms;
-        }        
+        }
+        
+        &--10{
+            animation-delay: 2000ms;
+        }
         
         &:active {
 

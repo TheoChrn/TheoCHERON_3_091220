@@ -1,0 +1,146 @@
+@media all and (min-width: 1024px){
+
+    .layout{ 
+        display: flex;
+
+        &--2{
+            flex-direction: row-reverse;
+            width: 30%;
+        }
+
+        &--menu{
+            flex-direction: row-reverse;
+            width: 100%;
+        }
+    }
+
+/*#region ACCUEIL*/
+
+    .discover{
+        display: flex;
+        height: 30%;
+        padding: 0;
+        padding-left: 0;
+    }
+
+    .search{
+        align-items: flex-start;
+        background-color: white;
+        padding: 0;
+    }
+
+    .fonctionnement{
+        height: 50%;
+        padding: 50px;
+        padding-left: 25px;
+        padding-top: 0;
+    }
+
+    .functionning{
+        padding: 0;
+
+        &__number{
+            left: 35px;
+        }
+
+        &__title{
+            display: flex;
+            text-align: none;
+            justify-content: center;
+        }
+    }
+    
+    .restaurants{
+        width: 70%;
+        background-color: white;
+        padding: 50px;
+        padding-left: 25px;
+        border-left: 5px solid #e2e2e2;
+
+        &__title{
+            justify-content: center;
+            margin: auto;
+            display: flex;
+        }
+    }
+
+    .cards{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 40%;
+
+        &__img{
+            height: 65%;
+        }
+    }
+
+/*#endregion ACCUEIL*/
+
+/*#region MENU*/
+    .background{
+        width: 40%;
+        height: inherit;
+        background-color: inherit;
+    }
+
+    #menu{
+        width: 60%;
+        padding: 10px;
+    }
+
+    .menu{
+        top: 0;
+        padding: 0;
+        border-radius: 0;
+        width: 100%;
+        position: inherit;
+
+        &__sections{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__section{
+            width: 30%;
+        }
+
+        &__display{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 300px;
+
+            &--long{
+                height: 400px;
+            }
+        }
+
+        &__choice{
+            height: 50px;
+            margin: 5px;
+        }
+
+        &__part{
+            text-align: center;
+        }
+
+        &__underline{
+            width: 50px;
+            margin: auto;
+        }
+
+        &__button{
+            margin: 15px;
+        }
+    }
+
+
+
+/*#endregion MENU*/
+
+    
+}
