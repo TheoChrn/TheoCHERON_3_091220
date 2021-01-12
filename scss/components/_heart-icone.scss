@@ -1,0 +1,33 @@
+.heart{
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    bottom: 25px;
+    right: 10px;
+    cursor: pointer;
+
+    .heart__icone{
+        position: relative;
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+
+        &--border{
+            right: 16px;
+            color: black;
+
+            &:hover{
+                opacity: 0;
+            }
+        }
+
+        &--fill{
+            opacity: 0;
+
+            &:hover{
+                opacity: 100;
+                color: $primary-color;
+            }
+        }
+    }
+}

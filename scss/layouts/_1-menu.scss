@@ -1,11 +1,11 @@
 @keyframes check-box{
     0% {
-        transform: scaleX(0);
+        transform: tanslateX(100px);
         
     }
 
     100% {
-        transform: scaleX(1);
+        transform: translateX(0);
     }
 }
 
@@ -73,6 +73,7 @@
 
     &__choice{
         display: flex;
+        justify-content: space-between;
         height: 50px;;
         background-color: white;
         border-radius: 20px;
@@ -126,16 +127,18 @@
             animation-delay: 2000ms;
         }
         
-        &:active {
+        &:hover {
 
-            & > .menu__check {
-                animation: check-box 700ms ease-out both;
+            & > .menu__check, .menu__price{
+                animation: check-box 700ms ease-out normal both;
                 transform-origin: right;
             }
 
                 .menu__check__icone{
-                    animation: spin 500ms 150ms forwards linear;
+                    animation: spin 500ms 150ms both linear;
             }
+
+
         }
     }
 
@@ -143,13 +146,12 @@
         display: flex;
         position: relative;
         top: -15px;
-        right: 0;
+        right: 0px;
         height: 80px;
         width: 100px;
         margin: 0;
         background: linear-gradient(170deg, $tertiary-color, $tertiary-color);
-        overflow: hidden;
-        transform: scaleX(1);
+        transform: translateX(100px);
     
         &__icone{
             color: white;
@@ -161,7 +163,7 @@
     &__content{
         display: flex;
         flex-direction: column;
-        width: 95%;
+        width: 50%;
         margin-top: auto;
         margin-bottom: auto;
 
@@ -176,6 +178,9 @@
     &__info{
         font-weight: 300;
         font-size: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__button{
@@ -186,6 +191,7 @@
     &__price{
         display: flex;
         font-weight: bolder;
+        transform: translateX(100px);
     
         & span{
             margin-bottom: auto;

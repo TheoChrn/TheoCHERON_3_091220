@@ -21,16 +21,16 @@ h1, h2 {
   animation: pop 1s 3s forwards;
 }
 
-a, li, h1, h2, h3, h4 {
+a, li, h1, h2, h3, h4, span {
   text-decoration: none;
   list-style: none;
   margin: 0;
 }
-a a:visited, li a:visited, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited {
+a a:visited, li a:visited, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, span a:visited {
   text-decoration: none;
   color: black;
 }
-a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__link:visited, h3 .nav__link:visited, h4 .nav__link:visited {
+a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__link:visited, h3 .nav__link:visited, h4 .nav__link:visited, span .nav__link:visited {
   text-decoration: none;
   color: white;
 }
@@ -72,11 +72,27 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   flex-direction: row-reverse;
   bottom: 25px;
   right: 10px;
+  cursor: pointer;
 }
 .heart .heart__icone {
+  position: relative;
   margin: auto;
   margin-left: 0;
   margin-right: 0;
+}
+.heart .heart__icone--border {
+  right: 16px;
+  color: black;
+}
+.heart .heart__icone--border:hover {
+  opacity: 0;
+}
+.heart .heart__icone--fill {
+  opacity: 0;
+}
+.heart .heart__icone--fill:hover {
+  opacity: 100;
+  color: #9356DC;
 }
 
 /**ANIMATION ACCUEIL**/
@@ -194,10 +210,10 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 
 @keyframes check-box {
   0% {
-    transform: scaleX(0);
+    transform: tanslateX(100px);
   }
   100% {
-    transform: scaleX(1);
+    transform: translateX(0);
   }
 }
 @keyframes spin {
@@ -255,6 +271,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 }
 .menu__choice {
   display: flex;
+  justify-content: space-between;
   height: 50px;
   background-color: white;
   border-radius: 20px;
@@ -297,24 +314,23 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .menu__choice--10 {
   animation-delay: 2000ms;
 }
-.menu__choice:active > .menu__check {
-  animation: check-box 700ms ease-out both;
+.menu__choice:hover > .menu__check, .menu__choice:hover .menu__price {
+  animation: check-box 700ms ease-out normal both;
   transform-origin: right;
 }
-.menu__choice:active .menu__check__icone {
-  animation: spin 500ms 150ms forwards linear;
+.menu__choice:hover .menu__check__icone {
+  animation: spin 500ms 150ms both linear;
 }
 .menu__check {
   display: flex;
   position: relative;
   top: -15px;
-  right: 0;
+  right: 0px;
   height: 80px;
   width: 100px;
   margin: 0;
   background: linear-gradient(170deg, #99E2D0, #99E2D0);
-  overflow: hidden;
-  transform: scaleX(1);
+  transform: translateX(100px);
 }
 .menu__check__icone {
   color: white;
@@ -324,7 +340,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .menu__content {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 50%;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -336,6 +352,9 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .menu__info {
   font-weight: 300;
   font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu__button {
   width: 100%;
@@ -346,6 +365,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .menu__price {
   display: flex;
   font-weight: bolder;
+  transform: translateX(100px);
 }
 .menu__price span {
   margin-bottom: auto;
@@ -355,6 +375,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 @media all and (min-width: 1024px) {
   .layout {
     display: flex;
+    height: 750px;
   }
   .layout--2 {
     flex-direction: row-reverse;
