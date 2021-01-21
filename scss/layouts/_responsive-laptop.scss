@@ -2,7 +2,6 @@
 
     .layout{ 
         display: flex;
-        height: 750px;
 
         &--2{
             flex-direction: row-reverse;
@@ -32,8 +31,6 @@
 
     .fonctionnement{
         height: 50%;
-        padding: 50px;
-        padding-left: 25px;
         padding-top: 0;
     }
 
@@ -73,10 +70,6 @@
 
     .card{
         width: 40%;
-
-        &__img{
-            height: 65%;
-        }
     }
 
 /*#endregion ACCUEIL*/
@@ -98,21 +91,27 @@
         padding: 0;
         border-radius: 0;
         width: 100%;
-        position: inherit;
 
         &__sections{
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
         }
 
         &__section{
-            width: 30%;
+            width: 45%;
         }
+
+        &__section:nth-child(3){
+            width: 45%;
+            align-self: center;
+            margin: auto;
+        }
+        
 
         &__display{
             display: flex;
             flex-direction: column;
-            justify-content: center;
             height: 300px;
 
             &--long{
@@ -137,11 +136,11 @@
         &__button{
             margin: 15px;
         }
+
+        &__price{
+            transform: translateX(80px);
+        }
     }
-
-
-
-/*#endregion MENU*/
-
-    
+/*#endregion MENU*/ 
+ 
 }

@@ -36,6 +36,7 @@
 }
 
 .card{
+    position: relative;
     display: flex;
     flex-direction: column;
     margin: $global-margin;
@@ -56,13 +57,19 @@
         }
 
         &__description{
+            position: relative;
             height: 30%;
             padding: 10px;
-            color: black;            
+            color: black;         
+        }
+        
+        &__name{
+            width: 80%;   
         }
 
         &__region{
             font-weight: 300;
+            width: 80%;   
         }
 
         &__description h3, &__description h4{
@@ -95,12 +102,15 @@
     }
 
     &__items{
+        display: flex;
+        justify-content: center;
+        position: relative;
         padding: 20px;
         margin: $global-margin;
         background-color: $background-color-alt;
         border-radius: 20px;
         @include box-shadow;
-
+        
         &:hover{
             transition: 300ms;
             @include lighter;
@@ -113,24 +123,37 @@
     }
 
     &__number{
-        display: flex;
         position: absolute;
-        flex-direction: row-reverse;
         border-radius: 30px;
-        left: 10px;
+        top: 34%;
+        left: -10px;
         width: 20px;
-        margin: auto;
         padding: 2px;
         background-color: $primary-color;
-        margin: auto;
         justify-content: center;
         color: white;
     }
 }
 
 .fa-mobile-alt, .fa-list-ul, .fa-store{
-    min-width: 20px;
+    position: absolute;
+    width: 20px;
     height: 20px;
-    float: left;
+    top: 34%;
+    left: 20px;
 
+}
+
+.new{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5%;
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: .8px;
+    background-color: $tertiary-color;
+    color: darken($color: $tertiary-color, $amount: 50);
+    line-height: 16px;
 }

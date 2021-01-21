@@ -1,33 +1,43 @@
 .heart{
-    display: flex;
-    position: relative;
-    flex-direction: row-reverse;
-    bottom: 25px;
-    right: 10px;
-    cursor: pointer;
+    
+}
 
-    .heart__icone{
-        position: relative;
+.heart__icone{
+        position: absolute;
         margin: auto;
         margin-left: 0;
         margin-right: 0;
-
-        &--border{
-            right: 16px;
-            color: black;
-
-            &:hover{
-                opacity: 0;
-            }
-        }
-
-        &--fill{
+        cursor: pointer;
+        transition: 500ms;
+    
+        &--fill{  
             opacity: 0;
+            top: 1.5%;
+            right: 15px;
+            
+            &--menu{
+                top: 40%;
+                right: 20px;
+            }
 
             &:hover{
                 opacity: 100;
                 color: $primary-color;
-            }
+            } 
         }
-    }
+
+        &--border{
+            top: 1.5%;
+            right: 15px;
+
+            &--menu{
+                top: 40%;
+                right: 20px;
+            }
+
+            &:hover{
+                opacity: 0;
+                color: $primary-color;
+            }  
+        }
 }

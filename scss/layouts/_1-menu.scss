@@ -33,6 +33,7 @@
 
 #menu{
     background-color: $background-color-alt;
+    position: relative
     
 }
 
@@ -52,8 +53,11 @@
     }
 
     &__name{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         font-style: oblique 60deg;
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     &__part{
@@ -91,42 +95,13 @@
             animation: fadeIn ease-out 600ms 200ms both;
         }
 
-        &--2{
-            animation-delay: 400ms;
-        }
+        $map: ("2": 400, "3": 600, "4": 800, "5": 1000, "6": 1200,
+         "7": 1400, "8": 1600, "9": 1800, "10": 2000);
 
-        &--3{
-            animation-delay: 600ms;
-        }
+        @each $index, $ms in $map {
+            &--#{$index}{animation-delay: #{$ms}ms;}
+          }
 
-        &--4{
-            animation-delay: 800ms;
-        }
-
-        &--5{
-            animation-delay: 1000ms;
-        }
-
-        &--6{
-            animation-delay: 1200ms;
-        }
-
-        &--7{
-            animation-delay: 1400ms;
-        }
-
-        &--8{
-            animation-delay: 1600ms;
-        }
-
-        &--9{
-            animation-delay: 1800ms;
-        }
-        
-        &--10{
-            animation-delay: 2000ms;
-        }
-        
         &:hover {
 
             & > .menu__check, .menu__price{
@@ -134,11 +109,13 @@
                 transform-origin: right;
             }
 
+            & > .menu__price{
+                animation: check-box 650ms 50ms ease-out normal both;
+            }
+
                 .menu__check__icone{
                     animation: spin 500ms 150ms both linear;
             }
-
-
         }
     }
 
@@ -191,11 +168,12 @@
     &__price{
         display: flex;
         font-weight: bolder;
-        transform: translateX(100px);
+        transform: translateX(90px);
     
         & span{
             margin-bottom: auto;
             margin-top: auto;
+            margin-right: 5px;
         }
     }    
 }
