@@ -1,3 +1,54 @@
+/**ANIMATION ACCUEIL**/
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader{
+    0%{
+        opacity: 1;
+        height: 500px
+    }   
+
+    80%{
+        height: 500px;
+    }
+
+    100%{
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes pop{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.spinner{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    font-size: 6em;
+    animation: loader 2500ms linear forwards;
+
+    &__img{
+        margin: auto;
+        animation: loading 600ms linear infinite forwards;
+    }
+}
+
 .localisation{
     display: flex;
     justify-content: center;
@@ -20,7 +71,6 @@
         width: 200px;
     }
 }
-
 
 .restaurants{
     background-color: $background-color-alt;
@@ -156,4 +206,67 @@
     background-color: $tertiary-color;
     color: darken($color: $tertiary-color, $amount: 50);
     line-height: 16px;
+}
+
+@media all and (min-width: 1024px){
+    /*#region ACCUEIL*/
+
+    .discover{
+        display: flex;
+        height: 30%;
+        padding: 0;
+        padding-left: 0;
+    }
+
+    .search{
+        align-self: center;
+        background-color: white;
+        padding: 0;
+    }
+
+    .fonctionnement{
+        height: 50%;
+        padding-top: 0;
+    }
+
+    .functionning{
+        padding: 0;
+
+        &__number{
+            left: -10px;
+        }
+
+        &__title{
+            display: flex;
+            text-align: none;
+            justify-content: center;
+        }
+    }
+    
+    .restaurants{
+        align-self: center;
+        width: 70%;
+        background-color: white;
+        padding: 50px;
+        padding-left: 25px;
+
+        &__title{
+            justify-content: center;
+            margin: auto;
+            display: flex;
+        }
+    }
+
+    .cards{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 40%;
+    }
+
+/*#endregion ACCUEIL*/
+
 }
