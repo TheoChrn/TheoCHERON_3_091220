@@ -2,7 +2,7 @@
 
 body, html {
     font-family: 'Roboto', sans-serif;
-    min-height : 100%;
+    height : 100%;
     margin: 0;
     padding: 0;
 }
@@ -13,7 +13,7 @@ h1, h2{
 
 .main{
     width: $main-width;
-    min-height: 73vh;
+    min-height: calc(100vh - 271.5px);
 
     &--accueil{
         opacity: 0;
