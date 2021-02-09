@@ -241,7 +241,7 @@
 
         &__title{
             display: flex;
-            text-align: none;
+            text-align: inherit;
             justify-content: center;
         }
     }
@@ -271,5 +271,4 @@
     }
 
 /*#endregion ACCUEIL*/
-
 }

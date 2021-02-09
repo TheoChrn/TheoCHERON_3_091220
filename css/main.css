@@ -178,14 +178,25 @@ a:visited {
   background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
-@keyframes check-box {
-  0% {
-    transform: tanslateX(100px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+/*@keyframes check-box{
+    0% {
+        transform: translateX(100px);  
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
+
+@keyframes check-boxReversed{
+    0% {
+        transform: translateX(0);  
+    }
+
+    100% {
+        transform: translateX(100px);
+    }
+}*/
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -236,7 +247,6 @@ a:visited {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-style: oblique 60deg;
   font-size: 1em;
 }
 .menu__part {
@@ -360,8 +370,8 @@ a:visited {
   justify-content: flex-end;
   margin: 0 5px 0 auto;
   font-weight: bolder;
-  transition: 450ms 250ms ease-out;
-  transform: translateX(45px);
+  transition: 550ms 150ms ease-out;
+  transform: translateX(50px);
 }
 .menu__price span {
   align-self: flex-end;
@@ -669,7 +679,7 @@ a:visited {
   }
   .functionning__title {
     display: flex;
-    text-align: none;
+    text-align: inherit;
     justify-content: center;
   }
 
