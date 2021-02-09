@@ -6,8 +6,8 @@
         cursor: pointer;
         transition: 500ms;
     
-        &--fill{  
-            opacity: 0;
+        &--fill{ 
+            color: transparent;
             top: 1.5%;
             right: 15px;
             
@@ -17,12 +17,12 @@
             }
 
             &:hover{
-                opacity: 100;
                 color: $primary-color;
             } 
         }
 
         &--border{
+            
             top: 1.5%;
             right: 15px;
 
@@ -32,7 +32,7 @@
             }
 
             &:hover{
-                opacity: 0;
+                color: transparent;
                 color: $primary-color;
             }  
         }

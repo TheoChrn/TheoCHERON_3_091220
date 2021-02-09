@@ -6,10 +6,12 @@
     color: white;
     font-weight: bolder;
     cursor: pointer;
+    box-shadow: 0 5px 5px lightgrey;
+    transition: box-shadow 300ms ease-in-out;
 
     &:hover{
-        transition: 300ms;
         opacity: .9;
+        box-shadow: 0 10px 5px lightgrey;
         
     }
 

@@ -38,14 +38,17 @@
 
 .spinner{
     display: flex;
-    height: 500px;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
     justify-content: center;
     font-size: 6em;
     animation: loader 2500ms linear forwards;
 
     &__img{
         margin: auto;
-        animation: loading 600ms linear infinite forwards;
+        animation: loading 600ms linear 5 forwards;
     }
 }
 

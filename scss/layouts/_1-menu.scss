@@ -1,7 +1,6 @@
 @keyframes check-box{
     0% {
-        transform: tanslateX(100px);
-        
+        transform: tanslateX(100px);  
     }
 
     100% {
@@ -16,6 +15,17 @@
 
     100% {
         transform: rotate(360deg);
+
+    }
+}
+
+@keyframes spinReverse{
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
 
     }
 }
@@ -92,11 +102,11 @@
         
 
         &--1, &--2, &--3, &--4, &--5, &--6, &--7, &--8, &--9, &--10{
-            animation: fadeIn ease-out 600ms 200ms both;
+            animation: fadeIn ease-out 800ms 400ms both;
         }
 
-        $map: ("2": 400, "3": 600, "4": 800, "5": 1000, "6": 1200,
-         "7": 1400, "8": 1600, "9": 1800, "10": 2000);
+        $map: ("2": 600, "3": 800, "4": 1000, "5": 1200, "6": 1400,
+         "7": 1600, "8": 1800, "9": 2000, "10": 2200);
 
         @each $index, $ms in $map {
             &--#{$index}{animation-delay: #{$ms}ms;}
@@ -105,16 +115,22 @@
         &:hover {
 
             & > .menu__check, .menu__price{
-                animation: check-box 700ms ease-out normal both;
+                transform: translateX(0);
+                //animation: check-box 700ms ease-out forwards;
                 transform-origin: right;
             }
 
-            & > .menu__price{
-                animation: check-box 650ms 50ms ease-out normal both;
+            /*& > .menu__price{
+                //animation: check-box 650ms 50ms ease-out forwards;
+            }*/
+
+            .menu__check__icone{
+                    animation: spin 700ms both linear;
             }
 
-                .menu__check__icone{
-                    animation: spin 500ms 150ms both linear;
+            .menu__content{
+                min-width: 50%;
+                width: 50%;
             }
         }
     }
@@ -126,11 +142,12 @@
         right: 0px;
         height: 80px;
         width: 100px;
-        margin: 0;
         background: linear-gradient(170deg, $tertiary-color, $tertiary-color);
+        transition: 700ms ease-out;
         transform: translateX(100px);
     
         &__icone{
+            animation: spinReverse 500ms both linear;
             color: white;
             margin: auto;
             font-size: 2em;
@@ -140,9 +157,10 @@
     &__content{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        min-width: 70%;
         margin-top: auto;
         margin-bottom: auto;
+        transition: 700ms ease-out;;
 
     }
 
@@ -167,13 +185,14 @@
 
     &__price{
         display: flex;
+        justify-content: flex-end;
+        margin: 0 5px 0 auto;
         font-weight: bolder;
-        transform: translateX(90px);
+        transition: 450ms 250ms ease-out;
+        transform: translateX(45px);
     
         & span{
-            margin-bottom: auto;
-            margin-top: auto;
-            margin-right: 5px;
+            align-self: flex-end;
         }
     }    
 }
@@ -244,7 +263,8 @@
     }
 
     &__price{
-        transform: translateX(80px);
+        transition: 450ms 250ms ease-out;
+        transform: translateX(45px);
     }
 }
 /*#endregion MENU*/ 

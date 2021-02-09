@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
 body, html {
   font-family: "Roboto", sans-serif;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -27,11 +27,13 @@ a, li, h1, h2, h3, h4, span {
   list-style: none;
   margin: 0;
 }
-a a:visited, li a:visited, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, span a:visited {
+
+a:visited {
   text-decoration: none;
   color: black;
 }
-a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__link:visited, h3 .nav__link:visited, h4 .nav__link:visited, span .nav__link:visited {
+
+.nav__link:visited {
   text-decoration: none;
   color: white;
 }
@@ -55,10 +57,12 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   color: white;
   font-weight: bolder;
   cursor: pointer;
+  box-shadow: 0 5px 5px lightgrey;
+  transition: box-shadow 300ms ease-in-out;
 }
 .btn:hover {
-  transition: 300ms;
   opacity: 0.9;
+  box-shadow: 0 10px 5px lightgrey;
 }
 .btn:focus {
   outline: none;
@@ -76,7 +80,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   transition: 500ms;
 }
 .heart__icone--fill {
-  opacity: 0;
+  color: transparent;
   top: 1.5%;
   right: 15px;
 }
@@ -85,7 +89,6 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   right: 20px;
 }
 .heart__icone--fill:hover {
-  opacity: 100;
   color: #9356DC;
 }
 .heart__icone--border {
@@ -97,7 +100,7 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   right: 20px;
 }
 .heart__icone--border:hover {
-  opacity: 0;
+  color: transparent;
   color: #9356DC;
 }
 
@@ -105,6 +108,10 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .footer {
   padding: 30px;
   background-color: #353535;
+}
+.footer--spin {
+  opacity: 0;
+  animation: pop 1s 3s forwards;
 }
 .footer__logo {
   filter: brightness(100);
@@ -187,6 +194,14 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
     transform: rotate(360deg);
   }
 }
+@keyframes spinReverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes fadeIn {
   0% {
     transform: translateY(10px);
@@ -252,44 +267,50 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   text-overflow: ellipsis;
 }
 .menu__choice--1, .menu__choice--2, .menu__choice--3, .menu__choice--4, .menu__choice--5, .menu__choice--6, .menu__choice--7, .menu__choice--8, .menu__choice--9, .menu__choice--10 {
-  animation: fadeIn ease-out 600ms 200ms both;
+  animation: fadeIn ease-out 800ms 400ms both;
 }
 .menu__choice--2 {
-  animation-delay: 400ms;
-}
-.menu__choice--3 {
   animation-delay: 600ms;
 }
-.menu__choice--4 {
+.menu__choice--3 {
   animation-delay: 800ms;
 }
-.menu__choice--5 {
+.menu__choice--4 {
   animation-delay: 1000ms;
 }
-.menu__choice--6 {
+.menu__choice--5 {
   animation-delay: 1200ms;
 }
-.menu__choice--7 {
+.menu__choice--6 {
   animation-delay: 1400ms;
 }
-.menu__choice--8 {
+.menu__choice--7 {
   animation-delay: 1600ms;
 }
-.menu__choice--9 {
+.menu__choice--8 {
   animation-delay: 1800ms;
 }
-.menu__choice--10 {
+.menu__choice--9 {
   animation-delay: 2000ms;
 }
+.menu__choice--10 {
+  animation-delay: 2200ms;
+}
+.menu__choice:hover {
+  /*& > .menu__price{
+      //animation: check-box 650ms 50ms ease-out forwards;
+  }*/
+}
 .menu__choice:hover > .menu__check, .menu__choice:hover .menu__price {
-  animation: check-box 700ms ease-out normal both;
+  transform: translateX(0);
   transform-origin: right;
 }
-.menu__choice:hover > .menu__price {
-  animation: check-box 650ms 50ms ease-out normal both;
-}
 .menu__choice:hover .menu__check__icone {
-  animation: spin 500ms 150ms both linear;
+  animation: spin 700ms both linear;
+}
+.menu__choice:hover .menu__content {
+  min-width: 50%;
+  width: 50%;
 }
 .menu__check {
   display: flex;
@@ -298,11 +319,12 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
   right: 0px;
   height: 80px;
   width: 100px;
-  margin: 0;
   background: linear-gradient(170deg, #99E2D0, #99E2D0);
+  transition: 700ms ease-out;
   transform: translateX(100px);
 }
 .menu__check__icone {
+  animation: spinReverse 500ms both linear;
   color: white;
   margin: auto;
   font-size: 2em;
@@ -310,9 +332,10 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 .menu__content {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  min-width: 70%;
   margin-top: auto;
   margin-bottom: auto;
+  transition: 700ms ease-out;
 }
 .menu__food {
   font-weight: bold;
@@ -334,13 +357,14 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 }
 .menu__price {
   display: flex;
+  justify-content: flex-end;
+  margin: 0 5px 0 auto;
   font-weight: bolder;
-  transform: translateX(90px);
+  transition: 450ms 250ms ease-out;
+  transform: translateX(45px);
 }
 .menu__price span {
-  margin-bottom: auto;
-  margin-top: auto;
-  margin-right: 5px;
+  align-self: flex-end;
 }
 
 @media all and (min-width: 1024px) {
@@ -398,7 +422,8 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
     margin: 15px;
   }
   .menu__price {
-    transform: translateX(80px);
+    transition: 450ms 250ms ease-out;
+    transform: translateX(45px);
   }
 
   /*#endregion MENU*/
@@ -454,14 +479,17 @@ a .nav__link:visited, li .nav__link:visited, h1 .nav__link:visited, h2 .nav__lin
 }
 .spinner {
   display: flex;
-  height: 500px;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  height: 100vh;
   justify-content: center;
   font-size: 6em;
   animation: loader 2500ms linear forwards;
 }
 .spinner__img {
   margin: auto;
-  animation: loading 600ms linear infinite forwards;
+  animation: loading 600ms linear 5 forwards;
 }
 
 .localisation {

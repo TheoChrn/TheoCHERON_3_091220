@@ -1,6 +1,12 @@
 .footer{
     padding: 30px;
     background-color: $footer-color;
+
+    &--spin{
+        opacity: 0;
+        animation: pop 1s 3s forwards;
+    }
+
     &__logo{
         filter: brightness(100);
     }
