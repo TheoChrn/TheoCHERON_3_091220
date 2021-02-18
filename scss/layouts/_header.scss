@@ -5,6 +5,11 @@
     padding: 15px;
     z-index: 1;
 
+    &--spin{
+        opacity: 0;
+        animation: pop 1s 3s forwards;
+    }
+
     &--shadow{
         position: relative;
         @include box-shadow;
