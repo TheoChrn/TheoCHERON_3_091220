@@ -71,38 +71,61 @@ a:visited {
   width: 150px;
 }
 
-.heart__icone {
+.heart__container {
   position: absolute;
+  right: 10px;
+  top: 40%;
   margin: auto;
-  margin-left: 0;
-  margin-right: 0;
   cursor: pointer;
-  transition: 500ms;
 }
-.heart__icone--fill {
+.heart__container:hover .heart, .heart__container:hover .heart:before, .heart__container:hover .heart::after {
+  opacity: 1;
+}
+.heart__container:hover .heart__icone {
   opacity: 0;
-  top: 1.5%;
-  right: 15px;
 }
-.heart__icone--fill--menu {
+.heart__container--menu {
   top: 40%;
   right: 20px;
 }
-.heart__icone--fill:hover {
-  opacity: 100;
-  color: #9356DC;
+.heart__container .heart {
+  background: linear-gradient(210deg, #FF79DA, #9356DC 50%);
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+  transition: 700ms;
+  top: 0;
+  transform: rotate(-45deg);
 }
-.heart__icone--border {
-  top: 1.5%;
-  right: 15px;
+.heart__container .heart:before, .heart__container .heart:after {
+  content: "";
+  transition: 700ms;
+  background: linear-gradient(225deg, #FF79DA, #9356DC 80%);
+  border-radius: 50%;
+  position: absolute;
 }
-.heart__icone--border--menu {
-  top: 40%;
-  right: 20px;
-}
-.heart__icone--border:hover {
+.heart__container .heart, .heart__container .heart:before, .heart__container .heart:after {
   opacity: 0;
-  color: #9356DC;
+  height: 15px;
+  width: 15px;
+}
+.heart__container .heart:before {
+  transition-delay: 200ms;
+  top: -7px;
+  left: 0;
+}
+.heart__container .heart:after {
+  transition-delay: 400ms;
+  left: 7px;
+  top: 0;
+}
+.heart__container .heart__icone {
+  transition: 250ms;
+  position: absolute;
+  top: -7px;
+  font-size: 27px;
+  left: 4px;
+  z-index: 1;
 }
 
 /**Layouts**/
@@ -250,6 +273,7 @@ a:visited {
 }
 .menu__name {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   font-size: 1em;
