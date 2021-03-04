@@ -29,3 +29,14 @@
 @mixin margin {
     margin: 20px;
 }
+
+@mixin flex-relative-sbetween {
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+}
+
+@mixin flex-justifycenter{
+    display: flex;
+    justify-content: center;
+}

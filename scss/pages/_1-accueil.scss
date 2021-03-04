@@ -37,11 +37,10 @@
 }
 
 #spinner{
-    display: flex;
+    @include flex-justifycenter;
     position: fixed;
     top: 100px;
     width: 100%;
-    justify-content: center;
     font-size: 6em;
     animation: loader 2500ms linear forwards;
 
@@ -60,16 +59,12 @@
 }
 
 .localisation{
-    display: flex;
-    justify-content: center;
+    @include flex-justifycenter;
     @include header;
     @include darker;
 
     &__map{
-        margin-right: 15px;
-        margin-left: 15px;
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto 15px;
     }
 
     &__text{
@@ -161,8 +156,7 @@
     }
 
     .functionning__items{
-        display: flex;
-        justify-content: center;
+        @include flex-justifycenter;
         position: relative;
         padding: 20px;
         margin: $global-margin;
@@ -245,9 +239,8 @@
         }
 
         &__title{
-            display: flex;
+            @include flex-justifycenter;
             text-align: inherit;
-            justify-content: center;
         }
     }
     
@@ -259,15 +252,13 @@
         padding-left: 25px;
 
         &__title{
-            justify-content: center;
+            @include flex-justifycenter;
             margin: auto;
-            display: flex;
         }
     }
 
     .cards{
-        display: flex;
-        justify-content: center;
+        @include flex-justifycenter;
         flex-wrap: wrap;
     }
 

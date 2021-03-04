@@ -47,21 +47,16 @@
     margin: 0;
 
     &__section{
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin: 15px 0;
     }
 
     &__name{
-        display: flex;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-between;
+        @include flex-relative-sbetween;
         font-size: 1em;
     }
 
     &__part{
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px 0;
 
         & h3{
             font-weight: 300;
@@ -75,16 +70,12 @@
     }
 
     &__choice{
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        height: 50px;;
+        @include flex-relative-sbetween;
+        height: 50px;
         background-color: white;
         border-radius: 20px;
-        padding: 15px;
-        padding-right: 0;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        padding: 15px 0 15px 15px;
+        margin: 15px 0;
         @include box-shadow;
         cursor: pointer;
         overflow: hidden;
@@ -99,7 +90,9 @@
          "7": 1600, "8": 1800, "9": 2000, "10": 2200);
 
         @each $index, $ms in $map {
-            &--#{$index}{animation-delay: #{$ms}ms;}
+            &--#{$index}{
+                animation-delay: #{$ms}ms;
+            }
         }
 
         &:hover {
@@ -147,8 +140,7 @@
         display: flex;
         flex-direction: column;
         min-width: 85%;
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto 0;
         transition: 500ms;
         white-space: nowrap;
     }
