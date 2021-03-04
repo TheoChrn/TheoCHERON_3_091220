@@ -39,6 +39,12 @@ a:visited {
 }
 
 /**Components**/
+#logo {
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+
 .logo {
   width: 100%;
 }
@@ -111,12 +117,12 @@ a:visited {
 }
 .heart__container .heart:before {
   transition-delay: 200ms;
-  top: -7px;
+  top: -8px;
   left: 0;
 }
 .heart__container .heart:after {
   transition-delay: 400ms;
-  left: 7px;
+  left: 8px;
   top: 0;
 }
 .heart__container .heart__icone {
@@ -137,21 +143,21 @@ a:visited {
   opacity: 0;
   animation: pop 1s 3s forwards;
 }
-.footer__logo {
+.footer #footer__logo {
   font-family: "Shrikhand", cursive;
   color: white;
   font-size: 35px;
 }
 
-.nav__link {
+#nav .nav__link {
   color: white;
   padding: 2px;
   font-weight: 300;
 }
-.nav__link--bold {
+#nav .nav__link--bold {
   font-weight: 500;
 }
-.nav__list {
+#nav__list {
   padding-left: 0;
   margin-bottom: 0;
   margin-top: 15px;
@@ -193,6 +199,7 @@ a:visited {
 
 .background {
   height: 250px;
+  margin: 0;
   background-size: cover;
   background-position: center;
   background-color: #f6f6f6;
@@ -210,25 +217,6 @@ a:visited {
   background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
 }
 
-/*@keyframes check-box{
-    0% {
-        transform: translateX(100px);  
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes check-boxReversed{
-    0% {
-        transform: translateX(0);  
-    }
-
-    100% {
-        transform: translateX(100px);
-    }
-}*/
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -295,6 +283,7 @@ a:visited {
   width: 45px;
 }
 .menu__choice {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 50px;
@@ -339,14 +328,12 @@ a:visited {
 .menu__choice--10 {
   animation-delay: 2200ms;
 }
-.menu__choice:hover {
-  /*& > .menu__price{
-      //animation: check-box 650ms 50ms ease-out forwards;
-  }*/
-}
-.menu__choice:hover > .menu__check, .menu__choice:hover .menu__price {
+.menu__choice:hover .menu__check {
   transform: translateX(0);
   transform-origin: right;
+}
+.menu__choice:hover .menu__price {
+  right: 100px;
 }
 .menu__choice:hover .menu__check__icone {
   animation: spin 700ms both linear;
@@ -363,7 +350,7 @@ a:visited {
   height: 80px;
   width: 100px;
   background: linear-gradient(170deg, #99E2D0, #99E2D0);
-  transition: 700ms ease-out;
+  transition: 700ms;
   transform: translateX(100px);
 }
 .menu__check__icone {
@@ -375,10 +362,11 @@ a:visited {
 .menu__content {
   display: flex;
   flex-direction: column;
-  min-width: 70%;
+  min-width: 85%;
   margin-top: auto;
   margin-bottom: auto;
-  transition: 700ms ease-out;
+  transition: 500ms;
+  white-space: nowrap;
 }
 .menu__food {
   font-weight: bold;
@@ -388,7 +376,8 @@ a:visited {
 .menu__info {
   font-weight: 300;
   font-size: 1em;
-  white-space: nowrap;
+}
+.menu__food, .menu__info {
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -399,12 +388,14 @@ a:visited {
   margin-top: 30px;
 }
 .menu__price {
+  position: absolute;
+  bottom: 18px;
+  right: 15px;
   display: flex;
   justify-content: flex-end;
   margin: 0 5px 0 auto;
+  transition: 700ms;
   font-weight: bolder;
-  transition: 550ms 150ms ease-out;
-  transform: translateX(50px);
 }
 .menu__price span {
   align-self: flex-end;
@@ -464,26 +455,27 @@ a:visited {
   .menu__button {
     margin: 15px;
   }
-  .menu__price {
-    transition: 450ms 250ms ease-out;
-    transform: translateX(45px);
-  }
 
   /*#endregion MENU*/
 }
+@media all and (min-width: 1600px) {
+  .menu__content {
+    min-width: 80%;
+  }
+}
 @media all and (min-width: 1024px) {
-  .layout {
+  .main {
     display: flex;
   }
-  .layout--accueil {
+  .main--accueil {
     min-height: calc(100vh - 271.5px);
   }
-  .layout--2 {
+  .main--2 {
     border-right: 5px solid #e2e2e2;
     flex-direction: row-reverse;
     width: 30%;
   }
-  .layout--menu {
+  .main--menu {
     flex-direction: row-reverse;
     width: 100%;
   }
@@ -502,10 +494,10 @@ a:visited {
 @keyframes loader {
   0% {
     opacity: 1;
-    height: 500px;
+    height: 70vh;
   }
   80% {
-    height: 500px;
+    height: 70vh;
   }
   100% {
     opacity: 0;
@@ -520,19 +512,23 @@ a:visited {
     opacity: 1;
   }
 }
-.spinner {
+#spinner {
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 100px;
   width: 100%;
-  height: 100vh;
   justify-content: center;
   font-size: 6em;
   animation: loader 2500ms linear forwards;
 }
-.spinner__img {
+#spinner .spinner__img {
   margin: auto;
   animation: loading 600ms linear 5 forwards;
+}
+
+#discover h2, #restaurants h2, #functionning h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
 }
 
 .localisation {
@@ -557,12 +553,12 @@ a:visited {
   width: 200px;
 }
 
-.restaurants {
+#restaurants {
   background-color: #f6f6f6;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.restaurants__title {
+#restaurants__title {
   margin: 20px;
 }
 
@@ -608,7 +604,7 @@ a:visited {
   padding: 1px;
 }
 
-.search {
+#search {
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100%;
@@ -616,23 +612,23 @@ a:visited {
   text-align: center;
   background-color: #f6f6f6;
 }
-.search__items__titles, .search__items__discover {
+#search__titles, #search #discover {
   width: 100%;
   justify-content: center;
 }
 
-.functionning {
+#functionning {
   padding-top: 30px;
   padding-bottom: 30px;
   width: 100%;
   height: auto;
   text-align: center;
 }
-.functionning__title {
+#functionning__title {
   text-align: start;
   margin: 20px;
 }
-.functionning__items {
+#functionning .functionning__items {
   display: flex;
   justify-content: center;
   position: relative;
@@ -640,17 +636,16 @@ a:visited {
   margin: 20px;
   background-color: #f6f6f6;
   border-radius: 20px;
+  transition: 300ms;
   box-shadow: 0 3px 8px silver;
 }
-.functionning__items:hover {
-  transition: 300ms;
+#functionning .functionning__items:hover {
   background-color: #e4d5f6;
 }
-.functionning__items:hover .fa-mobile-alt, .functionning__items:hover .fa-list-ul, .functionning__items:hover .fa-store {
-  transition: 300ms;
+#functionning .functionning__items:hover .fa-mobile-alt, #functionning .functionning__items:hover .fa-list-ul, #functionning .functionning__items:hover .fa-store {
   color: #9356DC;
 }
-.functionning__number {
+#functionning .functionning__number {
   position: absolute;
   border-radius: 30px;
   top: 34%;
@@ -686,44 +681,44 @@ a:visited {
 
 @media all and (min-width: 1024px) {
   /*#region ACCUEIL*/
-  .discover {
+  #discover {
     display: flex;
     height: 30%;
     padding: 0;
     padding-left: 0;
   }
 
-  .search {
+  #search {
     align-self: center;
     background-color: white;
     padding: 0;
   }
 
-  .fonctionnement {
+  #fonctionnement {
     height: 50%;
     padding-top: 0;
   }
 
-  .functionning {
+  #functionning {
     padding: 0;
   }
-  .functionning__number {
+  #functionning .functionning__number {
     left: -10px;
   }
-  .functionning__title {
+  #functionning__title {
     display: flex;
     text-align: inherit;
     justify-content: center;
   }
 
-  .restaurants {
+  #restaurants {
     align-self: center;
     width: 70%;
     background-color: white;
     padding: 50px;
     padding-left: 25px;
   }
-  .restaurants__title {
+  #restaurants__title {
     justify-content: center;
     margin: auto;
     display: flex;

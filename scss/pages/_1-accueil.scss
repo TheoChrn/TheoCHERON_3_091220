@@ -13,11 +13,11 @@
 @keyframes loader{
     0%{
         opacity: 1;
-        height: 500px
+        height: 70vh;
     }   
 
     80%{
-        height: 500px;
+        height: 70vh;
     }
 
     100%{
@@ -36,20 +36,27 @@
     }
 }
 
-.spinner{
+#spinner{
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 100px;
     width: 100%;
-    height: 100vh;
     justify-content: center;
     font-size: 6em;
     animation: loader 2500ms linear forwards;
 
-    &__img{
+    .spinner__img{
         margin: auto;
         animation: loading 600ms linear 5 forwards;
     }
+}
+
+#discover, #restaurants, #functionning{
+    h2{
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+    }
+    
 }
 
 .localisation{
@@ -75,7 +82,7 @@
     }
 }
 
-.restaurants{
+#restaurants{
     background-color: $background-color-alt;
     @include section;
 
@@ -97,6 +104,7 @@
     height: 225px;
     border-radius: 30px;
     @include box-shadow;
+
         &__img{
             max-height: 70%;
             max-width: 100%;
@@ -131,21 +139,19 @@
         }
 }
 
-.search{
+#search{
     @include section;
     @include align;
-    background-color: $background-color-alt;
+    background-color: $background-color-alt; 
 
-    &__items{
-        
-        &__titles, &__discover{
-            width: 100%;
-            justify-content: center;
-        }
+    &__titles, #discover{
+       width: 100%;
+        justify-content: center;
+
     }
 }
 
-.functionning{
+#functionning{
     @include section;
     @include align;
 
@@ -154,7 +160,7 @@
         @include margin;
     }
 
-    &__items{
+    .functionning__items{
         display: flex;
         justify-content: center;
         position: relative;
@@ -162,20 +168,19 @@
         margin: $global-margin;
         background-color: $background-color-alt;
         border-radius: 20px;
+        transition: 300ms;
         @include box-shadow;
         
         &:hover{
-            transition: 300ms;
             @include lighter;
 
             .fa-mobile-alt, .fa-list-ul, .fa-store{
-                transition: 300ms;
                 color: $primary-color;
             }
         }
     }
 
-    &__number{
+    .functionning__number{
         position: absolute;
         border-radius: 30px;
         top: 34%;
@@ -214,28 +219,28 @@
 @media all and (min-width: 1024px){
     /*#region ACCUEIL*/
 
-    .discover{
+    #discover{
         display: flex;
         height: 30%;
         padding: 0;
         padding-left: 0;
     }
 
-    .search{
+    #search{
         align-self: center;
         background-color: white;
         padding: 0;
     }
 
-    .fonctionnement{
+    #fonctionnement{
         height: 50%;
         padding-top: 0;
     }
 
-    .functionning{
+    #functionning{
         padding: 0;
 
-        &__number{
+        .functionning__number{
             left: -10px;
         }
 
@@ -246,7 +251,7 @@
         }
     }
     
-    .restaurants{
+    #restaurants{
         align-self: center;
         width: 70%;
         background-color: white;

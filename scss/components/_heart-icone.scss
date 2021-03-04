@@ -28,40 +28,40 @@
         transition: 700ms;
         top: 0;
         transform: rotate(-45deg);
-    }
 
-    .heart:before, .heart:after {
-        content: "";
-        transition: 700ms;
-        background: linear-gradient(225deg, $secondary-color, $primary-color 80%);
-        border-radius: 50%;
-        position: absolute;
-    }
+        &:before, &:after {
+            content: "";
+            transition: 700ms;
+            background: linear-gradient(225deg, $secondary-color, $primary-color 80%);
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        &, &:before, &:after{
+            opacity: 0;
+            height: 15px;
+            width: 15px;
+        }
+        
+        &:before {
+            transition-delay: 200ms;
+            top: -8px;
+            left: 0;
+        }
     
-    .heart, .heart:before, .heart:after{
-        opacity: 0;
-        height: 15px;
-        width: 15px;
-    }
+        &:after {
+            transition-delay: 400ms;
+            left: 8px;
+            top: 0;
+        }
     
-    .heart:before {
-        transition-delay: 200ms;
-        top: -7px;
-        left: 0;
-    }
-
-    .heart:after {
-        transition-delay: 400ms;
-        left: 7px;
-        top: 0;
-    }
-
-    .heart__icone{
-        transition: 250ms;
-        position: absolute;
-        top: -7px;
-        font-size: 27px;
-        left: 4px;
-        z-index: 1;
+        &__icone{
+            transition: 250ms;
+            position: absolute;
+            top: -7px;
+            font-size: 27px;
+            left: 4px;
+            z-index: 1;
+        }
     }
 }

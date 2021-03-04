@@ -7,16 +7,16 @@
         animation: pop 1s 3s forwards;
     }
 
-    &__logo{
+    #footer__logo{
         font-family: 'Shrikhand', cursive;
         color: white;
         font-size: 35px;
     }
 }
 
-.nav{
+#nav{
         
-    &__link{
+    .nav__link{
         color: $footer-text-color;
         padding: 2px; 
         font-weight: 300;
