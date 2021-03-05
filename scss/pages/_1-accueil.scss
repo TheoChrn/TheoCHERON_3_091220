@@ -53,7 +53,7 @@
 #discover, #restaurants, #functionning{
     h2{
         font-family: 'Roboto', sans-serif;
-        font-size: 18px;
+        font-size: 24px;
     }
     
 }
@@ -139,10 +139,16 @@
     @include align;
     background-color: $background-color-alt; 
 
-    &__titles, #discover{
-       width: 100%;
-        justify-content: center;
+    &__items__title{
+        margin: 0px 46px;
+    }
 
+    &__items__discover{
+        margin: 20px;
+    }
+
+    &__items__title, &__items__discover{
+        justify-content: center;
     }
 }
 
